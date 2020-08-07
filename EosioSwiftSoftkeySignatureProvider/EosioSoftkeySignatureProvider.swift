@@ -74,7 +74,7 @@ public final class EosioSoftkeySignatureProvider: EosioSignatureProviderProtocol
                     return completion(response)
                 }
                 objc_sync_exit(lock)
-                let chainIdData = try Data(hex: request.chainId)
+                let chainIdData = try Data.construct(hex: request.chainId)
                 let zeros = Data(repeating: 0, count: 32)
                 let data = try EosioEccSign.signWithK1(publicKey: key.uncompressedPublicKey, privateKey: key.privateKey, data: chainIdData + request.serializedTransaction + zeros)
                 signatures.append(data.toEosioK1Signature)

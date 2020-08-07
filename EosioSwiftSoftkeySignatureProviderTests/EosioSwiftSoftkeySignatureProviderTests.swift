@@ -74,7 +74,7 @@ class EosioSwiftSoftkeySignatureProviderTests: XCTestCase {
             signProvider.signTransaction(request: signReq) { (response) in
                 let signature = response.signedTransaction!.signatures.first!
                 print(signature)
-                guard let fakeChainIdData = try? Data(hex: fakeChainId) else {
+                guard let fakeChainIdData = try? Data.construct(hex: fakeChainId) else {
                     XCTFail("Invalid fakeChainId")
                     return
                 }

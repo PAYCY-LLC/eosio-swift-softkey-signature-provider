@@ -10,11 +10,14 @@ if using_local_pods
     pod 'EosioSwift', :path => '../eosio-swift'
     pod 'EosioSwiftEcc', :path => '../eosio-swift-ecc'
     pod 'SwiftLint'
+    pod 'UIExtensions.swift', :path => '../gui-kit/'
 
     target 'EosioSwiftSoftkeySignatureProviderTests' do
       inherit! :search_paths
       pod 'EosioSwift', :path => '../eosio-swift'
       pod 'EosioSwiftEcc', :path => '../eosio-swift-ecc'
+
+      pod 'UIExtensions.swift', :path => '../gui-kit/'
     end
   end
 else
@@ -22,14 +25,15 @@ else
   target 'EosioSwiftSoftkeySignatureProvider' do
     use_frameworks!
 
-    pod 'EosioSwift', '~> 0.4.0'
-    pod 'EosioSwiftEcc', '~> 0.4.0'
+    pod 'EosioSwift', git: 'https://github.com/horizontalsystems/eosio-swift'
+    pod 'EosioSwiftEcc', git: 'https://github.com/horizontalsystems/eosio-swift-ecc.git'
     pod 'SwiftLint'
+    pod 'UIExtensions.swift'
 
     target 'EosioSwiftSoftkeySignatureProviderTests' do
       inherit! :search_paths
-      pod 'EosioSwift', '~> 0.4.0'
-      pod 'EosioSwiftEcc', '~> 0.4.0'
+      pod 'EosioSwift', git: 'https://github.com/horizontalsystems/eosio-swift'
+      pod 'EosioSwiftEcc', git: 'https://github.com/horizontalsystems/eosio-swift-ecc.git'
     end
   end
 end
