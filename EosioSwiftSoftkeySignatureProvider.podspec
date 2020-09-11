@@ -42,5 +42,5 @@ Pod::Spec.new do |s|
   s.ios.dependency 'EosioSwiftEcc', '~> 0.4.0'
   s.ios.dependency 'EosioSwift', '~> 0.4.0'
 
-  s.dependency 'UIExtensions.swift', '~> 1.1.0'
+  s.dependency 'UIExtensions.swift', '~> 1.1.1'
 end
